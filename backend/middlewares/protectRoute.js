@@ -11,7 +11,7 @@ if(!token){
  return res.status(401).json({error:"Unauthorised User-No token provided"});
 
 }
-const decoded=await jwt.verify(token,process.env.JWTSecret);
+const decoded=await jwt.verify(token,process.env.jwtSecret);
 console.log(decoded)
 if(!decoded){
  return res.status(401).json({errro:"Unauthorised Access- token not matched"})
