@@ -13,7 +13,7 @@ const {selectedConversation,setSelectedConversation}=useConversation()
   const {onlineUsers}=useSocketContext()
   const isOnline=onlineUsers.includes(user._id)
   const {chatScreen,setChatScreen}=useUserContext()
-  var order=10;
+  
   return (
     <div onClick={()=>{setSelectedConversation(user)
     setChatScreen(true);}
