@@ -14,7 +14,7 @@ export const
   return (
    
   
-  <div className=' flex flex-col-reverse py-6 px-2 overflow-scroll h-[500px] '>
+  <div className=' flex flex-col-reverse py-6 px-2 overflow-scroll h-[500px] pb-9 '>
       {!loading && messages.length===0 && (<p className='text-white text-center mb-auto '>Send a message to strart a conversation</p>) }
 
     <div className=''>
