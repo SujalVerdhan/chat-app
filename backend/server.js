@@ -13,6 +13,7 @@ import cookieParser from "cookie-parser"
 import userRoutes from "./routes/user.routes.js"
 import cors from "cors"
 import { app, server } from "./socket/socket.js";
+
 dotenv.config();
 
 const __dirname=path.resolve()

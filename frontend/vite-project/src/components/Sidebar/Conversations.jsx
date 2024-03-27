@@ -13,11 +13,12 @@ const {selectedConversation,setSelectedConversation}=useConversation()
   const {onlineUsers}=useSocketContext()
   const isOnline=onlineUsers.includes(user._id)
   const {chatScreen,setChatScreen}=useUserContext()
+  var order=10;
   return (
     <div onClick={()=>{setSelectedConversation(user)
     setChatScreen(true);}
-    }   className={`flex justify-between items-center p-2 hover:bg-sky-500 ${isSelected?"bg-sky-500":""} `}>
-    <div className={`avatar ${isOnline?"online":""}  `}>
+    }   className={`flex justify-between items-center border-b-2 p-2 ${isOnline?"order-first":"order-last"} hover:bg-sky-500 ${isSelected?"bg-sky-500":""} `}>
+    <div className={`avatar  ${isOnline?"online":""}  `}>
   <div className="w-12 rounded-full">
     <img src={user.profilepic} />
   </div>
