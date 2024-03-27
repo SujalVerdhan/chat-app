@@ -1,6 +1,7 @@
 import React from 'react'
 import { useAuthContext } from '../../context/AuthContext'
 import useConversation from '../../zustand/useConversation'
+import { extractTime } from './extractTime'
 
 export const Message = ({message}) => {
   const {authUser}= useAuthContext()
@@ -17,6 +18,9 @@ const bubbleBgColor=isSender?"bg-sky-500":""
 const shake=message.shouldShake?"shake":""
 //   var d = new Date(message?.createdAt);
 // const hours=d?.getUTCHours(); // Hours
+// const minutes=d?.getUTCMinutes(); // Hours
+// const hours=d?.getUTCHours(); // Hours
+const fromattedTime=extractTime(message?.createdAt)
 console.log(profilePic)
   return (
     <div className={`chat ${chatClassName}`}>
@@ -25,9 +29,15 @@ console.log(profilePic)
       <img alt="Tailwind CSS chat bubble component" src={`${profilePic}`}/>
     </div>
   </div>
-  
+  <div className="chat-header me-4 ms-2">
+    {isSender?"You":selectedConversation.userName}
+    {/* <time className="text-xs opacity-50">12:45</time> */}
+  </div>
+  <div>
   <div className={`chat-bubble ${bubbleBgColor} ${shake} text-white`}>{chat}</div>
-  <time className="text-xs text-white">12:45</time>
+      <time className="text-xs ms-2 me-0 opacity-50">{fromattedTime}</time>
+
+  </div>
 </div>
   )
 }
