@@ -45,7 +45,7 @@ app.use(express.static(path.join(__dirname,"/frontend/vite-project/dist")))
 app.get("*",(req,res)=>{
     res.sendFile(path.join(__dirname,"frontend","vite-project","dist","index.html"))
 })
-server.listen(process.env.PORT,()=>{
-    connect();
+server.listen(process.env.PORT,async()=>{
+   await connect();
     console.log("server running in port 5000")
 })

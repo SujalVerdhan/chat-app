@@ -9,7 +9,7 @@ export const Conversation = () => {
   return (
     <div className='flex flex-col overflow-y-auto max-h-96'>
     {loading?<span className="loading loading-spinner loading-lg mx-ato absolute top-52 left-32"></span>:null}
-    {users.map(user=>{
+    {users?.map(user=>{
      return( <Conversations user={user} emoji={getRandomEmoji()}/>
     
      )

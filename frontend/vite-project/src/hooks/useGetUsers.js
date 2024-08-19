@@ -1,4 +1,5 @@
 import React, { useState,useEffect } from 'react'
+import toast from 'react-hot-toast'
 export const usegetUsers=()=>{
 const [loading,setLoading]=useState(false)
 
@@ -9,6 +10,7 @@ const [users,setUsers]=useState([])
       try{
     const res=await fetch("/api/users")
     const data=await res.json();
+    console.log(data)
     if(data.error){
       throw new Error(data.error)
     }
@@ -17,6 +19,7 @@ setUsers(data)
       }
       catch(err){
         console.log(err)
+        toast.error(`${err}`)
       }finally{
         setLoading(false)
       }

@@ -44,7 +44,7 @@ const {loading,signup}=useSignup()
               onChange={(e) =>
                 setInputs({ ...inputs, fullName: e.target.value })
               }
-              className="input input-bordered w-full h-10"
+              className="input input-bordered w-full h-10  bg-slate-950"
             />
           </div>
 
@@ -61,7 +61,7 @@ const {loading,signup}=useSignup()
               onChange={(e) =>
                 setInputs({ ...inputs, userName: e.target.value })
               }
-              className="input input-bordered w-full h-10"
+              className="input input-bordered w-full h-10  bg-slate-950"
             />
           </div>
 
@@ -78,7 +78,7 @@ const {loading,signup}=useSignup()
               onChange={(e) =>
                 setInputs({ ...inputs, password: e.target.value })
               }
-              className="input input-bordered w-full h-10"
+              className="input input-bordered w-full h-10  bg-slate-950"
             />
           </div>
           <div>
@@ -94,7 +94,7 @@ const {loading,signup}=useSignup()
               onChange={(e) =>
                 setInputs({ ...inputs, confirmPassword: e.target.value })
               }
-              className="input input-bordered w-full h-10"
+              className="input input-bordered w-full h-10  bg-slate-950"
             />
           </div>
           <Gender
@@ -107,7 +107,7 @@ const {loading,signup}=useSignup()
           >
             Already have an account?
           </Link>
-          <button  className="btn btn-block btn-sm-2 mt-2 p-0 h-6">{loading?<span className="loading loading-infinity loading-md"></span>:"Sign Up"}
+          <button  className="btn btn-block btn-sm-2 mt-2 p-0 h-6 hover:bg-black bg-black text-white border-black">{loading?<span className="loading loading-infinity loading-md"></span>:"Sign Up"}
             
           </button>
         </form>

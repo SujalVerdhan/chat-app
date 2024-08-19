@@ -7,6 +7,7 @@ export function extractTime(dateString) {
 
 // Helper function to pad single-digit numbers with a leading zero
 function padZero(number) {
+	console.log(number)
 	return number.toString().padStart(2, "0");
 }
 
