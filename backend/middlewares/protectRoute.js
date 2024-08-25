@@ -13,7 +13,18 @@ if(!token){
 
 }
 console.log(process.env.jwtSecret)
-const decoded=await jwt.verify(token,process.env.jwtSecret);
+const decoded=jwt.verify(token,process.env.jwtSecret,(err,res)=>{
+  if(err){
+    return "token expired"
+  }
+  else{
+    return res;
+  }
+});
+console.log("decoded value",decoded)
+if(decoded==="token expired"){
+  return res.status(401).json({error:"token expired"})
+}
 console.log("jai ho")
 console.log(decoded)
 if(!decoded){
